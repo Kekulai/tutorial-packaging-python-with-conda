@@ -37,7 +37,8 @@ Current practice from conda-side is to mix pip and conda conventions, with conda
 - General confusion on why there so much overlap between meta.yaml and setup.py -- basically conda is for packing a wide variety of programs and pip bridges the gap for python specific needs, hence the overlap in information between meta.yaml and setup.py[^6]
 - to `conda build` with different channels you specify the channels needed in the command line execution not in the meta.yaml[^7]
 - `setup.py` is still the best way to do editable installation![^8]
-- ```mypackage
+-```bash
+mypackage
 ├── pyproject.toml  # and/or setup.cfg/setup.py (depending on the configuration method)
 |   # README.rst or README.md (a nice description of your package)
 |   # LICENCE (properly chosen license information, e.g. MIT, BSD-3, GPL-3, MPL-2, etc...)
