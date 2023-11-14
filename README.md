@@ -19,7 +19,7 @@ Current practice from conda-side is to mix pip and conda conventions, with conda
 - conda packaging can not draw from pypi[^1]
 
 # Questions to Investigate
--[ ] Given the overlap between meta.yaml and setup.py, I am guessing once the environment is setup, setup.py can be empty for requirements, and I can go ahead and `pip install -e .` to develop
+- [ ] Given the overlap between meta.yaml and setup.py, I am guessing once the environment is setup, setup.py can be empty for requirements, and I can go ahead and `pip install -e .` to develop
 
 # Important Details & Limitations
 
