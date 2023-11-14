@@ -18,7 +18,7 @@ Current practice from conda-side is to mix pip and conda conventions, with conda
 
 - conda packaging can not draw from pypi[^1]
 
-# Important Details
+# Important Details & Limitations
 
 - pip and setup.py can install from dependency links not from pypi -- Additionally how to install from private git repos are also described [^2]
 - Best Practice for Conda development as of 202311[^3]
