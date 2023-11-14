@@ -2,6 +2,7 @@
 A consolidation of knowledge to demonstrate how to package a python project using conda that has requirements from conda
 
 # Challenge Addressed
+
 Current practice from conda-side is to mix pip and conda conventions, with conda documentation of build not updated, leading to difficulty in deploying a python packaging workflow in which the details of the conda/pip abstractions must be leaked through to the user.  This repo is an attempt to recover the minimal working model for both conda and setuptools to accomplish the following:
 - package a python program with dependencies from conda
 - use dependencies from private github repos
@@ -14,9 +15,11 @@ Current practice from conda-side is to mix pip and conda conventions, with conda
 # Example Workflows
 
 # Limitations
+
 - conda packaging can not draw from pypi[^1]
 
 # Important Details
+
 - pip and setup.py can install from dependency links not from pypi -- Additionally how to install from private git repos are also described [^2]
 - Best Practice for Conda development as of 202311[^3]
   - Setup `pyproject.toml` or `setup.py`
@@ -25,6 +28,7 @@ Current practice from conda-side is to mix pip and conda conventions, with conda
   - Build the package
   - Note that `conda develop` is not ready
 - `Setup.py` is not needed for modern pip install, but is still required for build/publication[^4]
+
 
 [^1]: [python - How do I install pip packages through a conda-build recipe? - Stack Overflow](https://stackoverflow.com/questions/64916092/how-do-i-install-pip-packages-through-a-conda-build-recipe)
 [^2]: [python - pip ignores dependency_links in setup.py - Stack Overflow](https://stackoverflow.com/questions/12518499/pip-ignores-dependency-links-in-setup-py)
