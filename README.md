@@ -31,7 +31,6 @@ Current practice from conda-side is to mix pip and conda conventions, with conda
   - Build the package
   - Note that `conda develop` is not ready
 - `Setup.py` is not needed for modern pip install, but is still required for build/publication[^4]
-- Conda can not build using dependencies from pypi -- you need to convert pypi packages to conda[^5]
 - General confusion on why there so much overlap between meta.yaml and setup.py -- basically conda is for packing a wide variety of programs and pip bridges the gap for python specific needs, hence the overlap in information between meta.yaml and setup.py[^6]
 - to `conda build` with different channels you specify the channels needed in the command line execution not in the meta.yaml[^7]
 
