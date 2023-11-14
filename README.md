@@ -18,6 +18,9 @@ Current practice from conda-side is to mix pip and conda conventions, with conda
 
 - conda packaging can not draw from pypi[^1]
 
+# Questions to Investigate
+[] Given the overlap between meta.yaml and setup.py, I am guessing once the environment is setup, setup.py can be empty for requirements, and I can go ahead and `pip install -e .` to develop
+
 # Important Details & Limitations
 
 - pip and setup.py can install from dependency links not from pypi -- Additionally how to install from private git repos are also described [^2]
@@ -29,7 +32,8 @@ Current practice from conda-side is to mix pip and conda conventions, with conda
   - Note that `conda develop` is not ready
 - `Setup.py` is not needed for modern pip install, but is still required for build/publication[^4]
 - Conda can not build using dependencies from pypi -- you need to convert pypi packages to conda[^5]
-- General confusion on why there so much overlap between meta.yaml and setup.py -- basically conda is for packing a wide variety of programs and pip bridges the gap for python specific needs, hence the overlap in information between meta.yaml and setup.py[^6] 
+- General confusion on why there so much overlap between meta.yaml and setup.py -- basically conda is for packing a wide variety of programs and pip bridges the gap for python specific needs, hence the overlap in information between meta.yaml and setup.py[^6]
+- to `conda build` with different channels you specify the channels needed in the command line execution not in the meta.yaml[^7]
 
 
 [^1]: [python - How do I install pip packages through a conda-build recipe? - Stack Overflow](https://stackoverflow.com/questions/64916092/how-do-i-install-pip-packages-through-a-conda-build-recipe)
@@ -38,3 +42,4 @@ Current practice from conda-side is to mix pip and conda conventions, with conda
 [^4]: [Understanding setup.py, setup.cfg and pyproject.toml in Python – SomeBeans](https://ianhopkinson.org.uk/2022/02/understanding-setup-py-setup-cfg-and-pyproject-toml-in-python/)
 [^5]: [python - How do I install pip packages through a conda-build recipe? - Stack Overflow](https://stackoverflow.com/questions/64916092/how-do-i-install-pip-packages-through-a-conda-build-recipe)
 [^6]: [[conda] meta.yaml versus setup.py](https://conda.continuum.narkive.com/cDWteatm/meta-yaml-versus-setup-py)
+[^7]: [Allow to specify channels in a recipe · Issue #532 · conda/conda-build](https://github.com/conda/conda-build/issues/532)
