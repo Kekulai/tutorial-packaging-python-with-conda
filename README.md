@@ -36,6 +36,7 @@ Current practice from conda-side is to mix pip and conda conventions, with conda
 - `Setup.py` is not needed for modern pip install, but is still required for build/publication[^4]
 - General confusion on why there so much overlap between meta.yaml and setup.py -- basically conda is for packing a wide variety of programs and pip bridges the gap for python specific needs, hence the overlap in information between meta.yaml and setup.py[^6]
 - to `conda build` with different channels you specify the channels needed in the command line execution not in the meta.yaml[^7]
+- `setup.py` is still the best way to do editable installation![^8]
 
 
 [^1]: [python - How do I install pip packages through a conda-build recipe? - Stack Overflow](https://stackoverflow.com/questions/64916092/how-do-i-install-pip-packages-through-a-conda-build-recipe)
@@ -45,3 +46,4 @@ Current practice from conda-side is to mix pip and conda conventions, with conda
 [^5]: [python - How do I install pip packages through a conda-build recipe? - Stack Overflow](https://stackoverflow.com/questions/64916092/how-do-i-install-pip-packages-through-a-conda-build-recipe)
 [^6]: [[conda] meta.yaml versus setup.py](https://conda.continuum.narkive.com/cDWteatm/meta-yaml-versus-setup-py)
 [^7]: [Allow to specify channels in a recipe · Issue #532 · conda/conda-build](https://github.com/conda/conda-build/issues/532)
+[^8]: > pip may allow editable install only with pyproject.toml and setup.cfg. However, this behavior may not be consistent over various pip versions and other packaging-related tools (setup.py is more reliable on those scenarios). [Configuring setuptools using pyproject.toml files - setuptools 68.2.2.post20231016 documentation](https://setuptools.pypa.io/en/latest/userguide/pyproject_config.html)
