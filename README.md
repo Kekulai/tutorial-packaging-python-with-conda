@@ -14,7 +14,7 @@ Current practice from conda-side is to mix pip and conda conventions, with conda
 
 # Important Details
 - pip and setup.py can install from dependency links not from pypi -- Additionally how to install from private git repos are also described [^2]
-- Best Practice for Conda development as of 202311[^3]:
+- Best Practice for Conda development as of 202311[^3]
   - Setup `pyproject.toml` or `setup.py`
   - Then create a meta.yaml conda package and manually find the conda equivalent of the deps
   - Install package in dev mode `pip install -e`
