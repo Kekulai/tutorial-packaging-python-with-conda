@@ -16,6 +16,8 @@ Current practice from conda-side is to mix pip and conda conventions, with conda
 
 [Understanding setup.py, setup.cfg and pyproject.toml in Python – SomeBeans](https://ianhopkinson.org.uk/2022/02/understanding-setup-py-setup-cfg-and-pyproject-toml-in-python/)
 
+[A Practical Guide to Using Setup.py - GoDataDriven](https://godatadriven.com/blog/a-practical-guide-to-using-setup-py/)
+
 # Example Workflows
 
 1. Setup Code as follows:
