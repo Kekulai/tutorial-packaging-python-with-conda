@@ -28,9 +28,11 @@ Current practice from conda-side is to mix pip and conda conventions, with conda
   - Build the package
   - Note that `conda develop` is not ready
 - `Setup.py` is not needed for modern pip install, but is still required for build/publication[^4]
+- Conda can not build using dependencies from pypi -- you need to convert pypi packages to conda[^5]
 
 
 [^1]: [python - How do I install pip packages through a conda-build recipe? - Stack Overflow](https://stackoverflow.com/questions/64916092/how-do-i-install-pip-packages-through-a-conda-build-recipe)
 [^2]: [python - pip ignores dependency_links in setup.py - Stack Overflow](https://stackoverflow.com/questions/12518499/pip-ignores-dependency-links-in-setup-py)
 [^3]: [What is the best workflow for developing python packages and publishing via Conda? · Issue #5058 · conda/conda-build](https://github.com/conda/conda-build/issues/5058)
 [^4]: [Understanding setup.py, setup.cfg and pyproject.toml in Python – SomeBeans](https://ianhopkinson.org.uk/2022/02/understanding-setup-py-setup-cfg-and-pyproject-toml-in-python/)
+[^5]: [python - How do I install pip packages through a conda-build recipe? - Stack Overflow](https://stackoverflow.com/questions/64916092/how-do-i-install-pip-packages-through-a-conda-build-recipe)
