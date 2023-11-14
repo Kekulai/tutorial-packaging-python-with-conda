@@ -1,6 +1,8 @@
 # tutorial-packaging-python-with-conda
 A consolidation of knowledge to demonstrate how to package a python project using conda that has requirements from conda
 
+
+
 # Challenge Addressed
 
 Current practice from conda-side is to mix pip and conda conventions, with conda documentation of build not updated, leading to difficulty in deploying a python packaging workflow in which the details of the conda/pip abstractions must be leaked through to the user.  This repo is an attempt to recover the minimal working model for both conda and setuptools to accomplish the following:
@@ -8,21 +10,22 @@ Current practice from conda-side is to mix pip and conda conventions, with conda
 - use dependencies from private github repos
 - setup and deploy a private conda channel
 
+
+
 # Background Reading
 
 [Understanding setup.py, setup.cfg and pyproject.toml in Python – SomeBeans](https://ianhopkinson.org.uk/2022/02/understanding-setup-py-setup-cfg-and-pyproject-toml-in-python/)
 
 # Example Workflows
 
-# Limitations
-
-- conda packaging can not draw from pypi[^1]
 
 # Questions to Investigate
 - [ ] Given the overlap between meta.yaml and setup.py, I am guessing once the environment is setup, setup.py can be empty for requirements, and I can go ahead and `pip install -e .` to develop
 
+
 # Important Details & Limitations
 
+- conda packaging can not draw from pypi[^1]
 - pip and setup.py can install from dependency links not from pypi -- Additionally how to install from private git repos are also described [^2]
 - Best Practice for Conda development as of 202311[^3]
   - Setup `pyproject.toml` or `setup.py`
