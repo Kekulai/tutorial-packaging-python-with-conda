@@ -1,0 +1,20 @@
+package:
+  name: mypackage
+  version: 0.0.1
+
+build:
+  number: 0
+  script: python -m pip install . -vv --no-deps --no-build-isolation
+
+source:
+  path: .
+
+requirements:
+  build: 
+    - python 
+    - setuptools 
+    - pip
+    
+  run:
+    - python
+    - rdkit
