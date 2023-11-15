@@ -28,6 +28,7 @@ Current practice from conda-side is to mix pip and conda conventions, with conda
 mypackage
 ├── setup.py  # to maximize backwards compatability, I will not use pyproject.toml
 |   # README.rst or README.md (a nice description of your package)
+|   meta.yaml # the file needed to build a conda package
 |   # LICENCE (properly chosen license information, e.g. MIT, BSD-3, GPL-3, MPL-2, etc...)
 └── mypackage
     ├── __init__.py
