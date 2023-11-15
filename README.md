@@ -43,6 +43,8 @@ $ git clone https://github.com/Kekulai/tutorial-packaging-python-with-conda.git
 $ cd tutorial-packaging-python-with-conda
 $ conda build -c conda-forge .
 $ conda env create -n testmypackage
+$ conda activate testmypackage
+$ conda install --use-local -c conda-forge mypackage 
 ```
 # Questions to Investigate
 - [ ] Given the overlap between meta.yaml and setup.py, I am guessing once the environment is setup, setup.py can be empty for requirements, and I can go ahead and `pip install -e .` to develop
