@@ -44,7 +44,7 @@ $ cd tutorial-packaging-python-with-conda
 $ conda build -c conda-forge .
 $ conda env create -n testmypackage
 $ conda activate testmypackage
-$ conda install --use-local -c conda-forge mypackage 
+$ conda install --use-local -c conda-forge -c tmap mypackage 
 ```
 
 >Explicitly installing a local package bypasses the dependency resolver, as such the package's run dependencies will not be evaluated. See conda install --help or the install command reference page for more info.
@@ -53,6 +53,25 @@ $ conda install --use-local -c conda-forge mypackage
 ```bash
 $ python test.py
 ```
+
+now lets upload to anaconda.org 
+1. create channel on anaconda.org
+  - create org, e.g. `kekulai`
+2. find build
+3. upload to channel
+```bash
+$ conda build . --output
+$ anaconda upload --user kekulai /anaconda/conda-bld/linux-64/mypackage-0.0.1-py310_0.tar.bz2
+```
+
+(annoying limitation) to install pacakge, you need to provide the channels 
+```bash
+$ conda install -c kekulai -c tmap mypackage
+```
+
+
+
+
 # Questions to Investigate
 - [ ] Given the overlap between meta.yaml and setup.py, I am guessing once the environment is setup, setup.py can be empty for requirements, and I can go ahead and `pip install -e .` to develop
 > When your project is installed, all of the dependencies not already installed will be located (via PyPI), downloaded, built (if necessary), and installed. This, of course, is a simplified scenario. You can also specify groups of extra dependencies that are not strictly required by your package to work, but that will provide additional functionalities. For more advanced use, see Dependencies Management in Setuptools.
@@ -75,6 +94,6 @@ $ python test.py
 - `setup.py` is still the best way to do editable installation!
   > pip may allow editable install only with pyproject.toml and setup.cfg. However, this behavior may not be consistent over various pip versions and other packaging-related tools (setup.py is more reliable on those scenarios). [Configuring setuptools using pyproject.toml files - setuptools 68.2.2.post20231016 documentation](https://setuptools.pypa.io/en/latest/userguide/pyproject_config.html)
 - more conda and pip nuance [Suggestions for a conda user preparing a package for PyPI - Questions about Python Packaging & Code - pyOpenSci Community Forum](https://pyopensci.discourse.group/t/suggestions-for-a-conda-user-preparing-a-package-for-pypi/324/2)
-
+- can't set custom channels on the meta.yaml file [unresolved conda-build git thread]([Allow to specify channels in a recipe · Issue #532 · conda/conda-build](https://github.com/conda/conda-build/issues/532))
 
 

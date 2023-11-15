@@ -11,10 +11,11 @@ source:
 
 requirements:
   build: 
-    - python<3.11
+    - python<3.11s
     - setuptools 
     - pip
     
   run:
     - python<3.11
-    - rdkit
+    - conda-forge::rdkit
+    - tmap::tmap
