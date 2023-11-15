@@ -46,6 +46,13 @@ $ conda env create -n testmypackage
 $ conda activate testmypackage
 $ conda install --use-local -c conda-forge mypackage 
 ```
+
+>Explicitly installing a local package bypasses the dependency resolver, as such the package's run dependencies will not be evaluated. See conda install --help or the install command reference page for more info.
+[conda build docs](https://docs.conda.io/projects/conda-build/en/stable/user-guide/tutorials/build-pkgs.html)
+
+```bash
+$ python test.py
+```
 # Questions to Investigate
 - [ ] Given the overlap between meta.yaml and setup.py, I am guessing once the environment is setup, setup.py can be empty for requirements, and I can go ahead and `pip install -e .` to develop
 > When your project is installed, all of the dependencies not already installed will be located (via PyPI), downloaded, built (if necessary), and installed. This, of course, is a simplified scenario. You can also specify groups of extra dependencies that are not strictly required by your package to work, but that will provide additional functionalities. For more advanced use, see Dependencies Management in Setuptools.
