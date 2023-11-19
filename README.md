@@ -7,6 +7,7 @@ GIVEN:
 - conda packaging works best if ALL dependencies are contained within channels in default or conda-forge
 - if you need multiple channel dependencies, you will need to track these channel dependcies manually in the form of conda install -c dependentchannel1 -c dependentchannel2 yourpackage.  
 - mixing conda and pip does not work in the conda build
+  
 SOLUTION:
 - A: convert all pip and channel depdencies into conda packages into one channel and user adds that one channel 
 - B: manually curate a uber envritonment.ymle conda file
