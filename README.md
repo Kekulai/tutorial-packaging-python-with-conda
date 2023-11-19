@@ -1,8 +1,16 @@
 # tutorial-packaging-python-with-conda
 A consolidation of knowledge to demonstrate how to package a python project using conda that has requirements from conda
 
+#TLDR - How to handle mixed channel and mixed conda/pip dependencies?
 
-
+GIVEN:
+- conda packaging works best if ALL dependencies are contained within channels in default or conda-forge
+- if you need multiple channel dependencies, you will need to track these channel dependcies manually in the form of conda install -c dependentchannel1 -c dependentchannel2 yourpackage.  
+- mixing conda and pip does not work in the conda build
+SOLUTION:
+- A: convert all pip and channel depdencies into conda packages into one channel and user adds that one channel 
+- B: manually curate a uber envritonment.ymle conda file
+  
 # Challenge Addressed
 
 Current practice from conda-side is to mix pip and conda conventions, with conda documentation of build not updated, leading to difficulty in deploying a python packaging workflow in which the details of the conda/pip abstractions must be leaked through to the user.  This repo is an attempt to recover the minimal working model for both conda and setuptools to accomplish the following:
