@@ -17,9 +17,9 @@ SOLUTION:
 Current practice from conda-side is to mix pip and conda conventions, with conda documentation of build not updated, leading to difficulty in deploying a python packaging workflow in which the details of the conda/pip abstractions must be leaked through to the user.  This repo is an attempt to recover the minimal working model for both conda and setuptools to accomplish the following:
 - package a python program with dependencies from conda
 
-_NB_: You cannot mix conda and pip dependencies in the conda build recipe --  so you have to either convert all pip or github dependcies as conda or just use a growing env.yaml file you manually update. [python - How do I install pip packages through a conda-build recipe? - Stack Overflow](https://stackoverflow.com/questions/64916092/how-do-i-install-pip-packages-through-a-conda-build-recipe)  [pip dependencies in conda recipe · Issue #548 · conda/conda-build](https://github.com/conda/conda-build/issues/548)
+- _NB_: You cannot mix conda and pip dependencies in the conda build recipe --  so you have to either convert all pip or github dependcies as conda or just use a growing env.yaml file you manually update. [python - How do I install pip packages through a conda-build recipe? - Stack Overflow](https://stackoverflow.com/questions/64916092/how-do-i-install-pip-packages-through-a-conda-build-recipe)  [pip dependencies in conda recipe · Issue #548 · conda/conda-build](https://github.com/conda/conda-build/issues/548)
 
-_NB_: to quickly build a conda package from pypi [Building conda packages with conda skeleton — conda-build 0.0.0.dev0+placeholder documentation](https://docs.conda.io/projects/conda-build/en/stable/user-guide/tutorials/build-pkgs-skeleton.html)
+- _NB_: to quickly build a conda package from pypi [Building conda packages with conda skeleton — conda-build 0.0.0.dev0+placeholder documentation](https://docs.conda.io/projects/conda-build/en/stable/user-guide/tutorials/build-pkgs-skeleton.html)
 
 
 
