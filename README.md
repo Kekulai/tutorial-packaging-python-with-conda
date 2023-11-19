@@ -1,7 +1,7 @@
 # tutorial-packaging-python-with-conda
 A consolidation of knowledge to demonstrate how to package a python project using conda that has requirements from conda
 
-#TLDR - How to handle mixed channel and mixed conda/pip dependencies?
+# TLDR - How to handle mixed channel and mixed conda/pip dependencies?
 
 GIVEN:
 - conda packaging works best if ALL dependencies are contained within channels in default or conda-forge
