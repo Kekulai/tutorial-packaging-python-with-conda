@@ -1,14 +1,26 @@
 # tutorial-packaging-python-with-conda
 A consolidation of knowledge to demonstrate how to package a python project using conda that has requirements from conda
 
+# TLDR - How to handle mixed channel and mixed conda/pip dependencies?
 
-
+GIVEN:
+- conda packaging works best if ALL dependencies are contained within channels in default or conda-forge
+- if you need multiple channel dependencies, you will need to track these channel dependcies manually in the form of conda install -c dependentchannel1 -c dependentchannel2 yourpackage.  
+- mixing conda and pip does not work in the conda build
+  
+SOLUTION:
+- A: convert all pip and channel depdencies into conda packages into one channel and user adds that one channel 
+- B: manually curate a uber envritonment.ymle conda file
+  
 # Challenge Addressed
 
 Current practice from conda-side is to mix pip and conda conventions, with conda documentation of build not updated, leading to difficulty in deploying a python packaging workflow in which the details of the conda/pip abstractions must be leaked through to the user.  This repo is an attempt to recover the minimal working model for both conda and setuptools to accomplish the following:
 - package a python program with dependencies from conda
-- use dependencies from private github repos
-- setup and deploy a private conda channel
+
+- _NB_: You cannot mix conda and pip dependencies in the conda build recipe --  so you have to either convert all pip or github dependcies as conda or just use a growing env.yaml file you manually update. [python - How do I install pip packages through a conda-build recipe? - Stack Overflow](https://stackoverflow.com/questions/64916092/how-do-i-install-pip-packages-through-a-conda-build-recipe)  [pip dependencies in conda recipe · Issue #548 · conda/conda-build](https://github.com/conda/conda-build/issues/548)
+
+- _NB_: to quickly build a conda package from pypi [Building conda packages with conda skeleton — conda-build 0.0.0.dev0+placeholder documentation](https://docs.conda.io/projects/conda-build/en/stable/user-guide/tutorials/build-pkgs-skeleton.html)
+
 
 
 
@@ -74,7 +86,7 @@ $ conda install -c kekulai -c tmap mypackage
 
 
 # Questions to Investigate
-- [ ] Given the overlap between meta.yaml and setup.py, I am guessing once the environment is setup, setup.py can be empty for requirements, and I can go ahead and `pip install -e .` to develop
+- [x] Given the overlap between meta.yaml and setup.py, I am guessing once the environment is setup, setup.py can be empty for requirements, and I can go ahead and `pip install -e .` to develop. [confirmed]
 > When your project is installed, all of the dependencies not already installed will be located (via PyPI), downloaded, built (if necessary), and installed. This, of course, is a simplified scenario. You can also specify groups of extra dependencies that are not strictly required by your package to work, but that will provide additional functionalities. For more advanced use, see Dependencies Management in Setuptools.
 
 
